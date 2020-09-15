@@ -1,0 +1,62 @@
+﻿@model  QuanLyBanHoa.Models.Hoa
+@{
+    ViewBag.Title = "XoaHoa";
+    Layout = "~/Views/Shared/Layout_Admin.cshtml";
+}
+<h2>XThông tin cần hóa</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên hoa:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHoa)
+        </dd>
+
+        <dt>
+            Giá bán:
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.Giaban) VNÐ
+        </dd>
+
+        <dt>
+            Mô t?:
+        </dt>
+
+        <dd style="width:600px; text-align:justify">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            Ảnh bìa
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/Content/img/"+ Model.HinhAnh)" width="120px" />
+        </dd>
+        <dt>
+            Loại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiHoa.TenLoai)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoá" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "QLH")
+        </div>
+    }
+</div>
+

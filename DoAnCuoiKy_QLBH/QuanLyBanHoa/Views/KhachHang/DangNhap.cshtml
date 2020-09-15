@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+<h3 style="text-align:center">@ViewBag.ThongBao</h3>
+<!--td là cot, th là tiêu đề, tr là dòng -->
+<div style="padding-top:100px;padding-left:400px; height:400px;background-image:url(http://hinhnenpowerpointdep.com/uploads/images/20-hinh-anh-cuc-chat-cuc-la-ve-hoa-hoc-1494512053-4.jpg)">
+    <table border="0">
+    <tr>
+        <th></th>
+        <th> <h1 style="color:#ff0000">Đăng nhập</h1></th>
+        <th></th>
+    </tr>
+        @using (Html.BeginForm())
+        {
+            <tr class="height-DNDK">
+                <th>
+                   Tài khoản:
+                </th>
+                <td>
+                   @Html.TextBox("TaiKhoan") @ViewData["Loi1"]
+                </td>
+                <td></td>
+            </tr>
+            <tr class="height-DNDK">
+                <th>
+                    Mật khẩu
+                </th>
+                <td>
+                    @Html.Password("MatKhau") @ViewData["Loi2"]
+                </td>
+                <td></td>
+            </tr>
+            <tr class="height-DNDK">
+                <td></td>
+                <td>
+                    <input type="submit" value="Đăng nhập" />
+                    <a href="@Url.Action("DangKy","KhachHang")">Bạn chưa có tài khoản?</a>
+                    
+                </td>
+            </tr>
+            
+        }
+
+</table>
+</div>

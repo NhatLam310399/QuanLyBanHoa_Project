@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quản lý</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/CSS/CSSAdmin.css" rel="stylesheet" />
+</head>
+<body style="background-image:url('/Images/bgAD.jpg')">
+       <div class="container">
+           <div class="head-header"> 
+               @{
+                   var ss = (QuanLyBanHoa.Models.Admin)Session["TaikhoanAD"];
+                   }
+               <a style="font-size:60px; font-family:'UTM Cooper'"> <img src="~/Images/admin.png"  width="300" height="300"/>  QUẢN LÝ HỆ THỐNG</a> <br />
+               <a style="font-size:18px; color:#ff0000;font-weight:bold;margin-left:80px"> Admin: @ss.TenAD </a>
+           </div>
+           <div class="headerAD">
+               <nav>
+                   <a href="@Url.Action("DangXuat","Admin")">Đăng xuất</a>
+                   <a>@Html.ActionLink("Quản lý hoa","QLH","Admin")</a>
+                   <a>@Html.ActionLink("Quản lý đơn hàng","QLDH","Admin")</a>
+               </nav>
+            </div>
+           <div class="main">
+               @RenderBody()
+           </div>
+       </div>
+    
+</body>
+</html>

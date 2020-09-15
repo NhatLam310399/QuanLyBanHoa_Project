@@ -1,0 +1,99 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="~/Images/favicon.ico"/>
+<!--===============================================================================================-->
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+    <link href="~/Content/fonts/font-awesome.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+    <link href="~/Content/fonts/material-design-iconic-font.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+    <link href="~/Content/vendor/animate.css" rel="stylesheet" />
+<!--===============================================================================================-->	
+    <link href="~/Content/vendor/hamburgers.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+    <link href="~/Content/vendor/animsition.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+    <link href="~/Content/vendor/select2.min.css" rel="stylesheet" />
+<!--===============================================================================================-->	
+    <link href="~/Content/vendor/daterangepicker.css" rel="stylesheet" />
+<!--===============================================================================================-->
+    <link href="~/Content/themes/CSS/main.css" rel="stylesheet" />
+    <link href="~/Content/themes/CSS/util.css" rel="stylesheet" />
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+			@using (Html.BeginForm())
+                    {
+                <form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						Welcome to <a style="font-size:40px; font-weight:bold; font-family:Arial"> Administrator </a>
+					</span>
+                  
+                        @Html.ValidationSummary(true)
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="TkAD">
+                                    @ViewData["Loi1"]
+						<span class="focus-input100" data-placeholder="Tài khoản"></span>
+            
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="MkAD">
+                            @ViewData["Loi1"]
+						<span class="focus-input100" data-placeholder="Mật khẩu"></span>
+                    
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit">
+								Đăng nhập
+							</button>
+						</div>
+					</div>
+				</form>
+                 }
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+    <script src="~/Content/vendor/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+    <script src="~/Content/vendor/animsition.min.js"></script>
+<!--===============================================================================================-->
+    <script src="~/Content/vendor/popper.js"></script>
+    <script src="~/Content/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+    <script src="~/Content/vendor/select2.min.js"></script>
+<!--===============================================================================================-->
+    <script src="~/Content/vendor/moment.min.js"></script>
+    <script src="~/Content/vendor/daterangepicker.js"></script>
+<!--===============================================================================================-->
+    <script src="~/Content/vendor/countdowntime.js"></script>
+<!--===============================================================================================-->
+    <script src="~/Content/vendor/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿@using QuanLyBanHoa.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "Dathang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">THÔNG TIN ĐẶT HÀNG</h2>
+@{
+    KhachHang kh = (KhachHang)Session["Taikhoan"];
+}
+<br />
+<div class="row">
+
+    <div class="col-lg-8">
+<h4 style="text-align:center;color:blue">THÔNG TIN ĐẶT HÀNG </h4>
+
+<table border="1">
+
+   <tr style="background:#000000; height:40px;color:#ffffff;text-align:center;font-size:16px">
+        <th>Mã hoa</th>
+        <th>Tên hoa</th>
+        <th>Hình ảnh</th>
+        <th>Số lượng</th>
+        <th>Ðơn giá</th>
+        <th colspan="4">Thành tiền</th>
+
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="font-weight:bold">
+            <td> @item.sMahoa </td>
+           
+            <td> @item.sTenhoa</td>
+            <td><img src="~/Images/@item.sHinhAnh" width="220" height="250"></td>
+            @using (Html.BeginForm("Capnhatgiohang", "Giohang", new { @masp = item.sMahoa}))
+            {
+                <td>
+                    <input type="number" min="1" name="txtSoluong" value="@item.iSoluong" style="background-color:#ffffff"/>
+                </td>
+                <td>@String.Format("{0:0,0}", item.iDonGia)</td>
+                <td colspan="4" > @String.Format("{0:0,0}",item.ithanhTien) VNĐ</td>
+                
+               
+               
+            }
+        </tr>
+    }
+    
+     </table>
+        <div class="row">
+            <div class="col-lg-6"></div>
+             <div class="col-lg-3" style="text-align:center;font-weight:bold;color:red">Số lượng sách: @ViewBag.TongSoLuong</div>
+             <div class="col-lg-3" style="text-align:center;font-weight:bold;color:red">
+                 Tổng tiền: @ViewBag.TongTien VNĐ
+             </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-4"> 
+        <h4  style="text-align:center;color:blue" >THÔNG TIN KHÁCH HÀNG</h4>
+        
+     @using (Html.BeginForm())
+    {
+        <table align="center" style="font-size:16px">
+    
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td>Tài khoản khách hàng:</td>
+            <td style="font-weight:bold">@kh.TaiKhoan</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Họ tên khách hàng:</td>
+            <td style="font-weight:bold">@kh.TenKH</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Ðịa chỉ:</td>
+            <td style="font-weight:bold">@kh.DiaChi</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Điện thoại:</td>
+            <td style="font-weight:bold">@kh.DienThoai</td>
+        </tr>
+         <tr style="height:40px">
+            <td>Email:</td>
+            <td style="font-weight:bold">@kh.Email</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Ngày bán:</td>
+            <td style="font-weight:bold">
+                @DateTime.Now.ToShortDateString()
+            </td>
+        </tr>
+   
+        
+    
+</table>
+         <br />
+         <br />
+         <br />
+    <input type="submit" value="Xác nhận thông tin" style="font-size:18px; margin-left:35px"/>
+
+         
+
+     }
+</div>
+    </div>
+
+
+
+
+

@@ -1,0 +1,125 @@
+﻿
+.header
+{
+    margin-top: 20px;
+}
+
+.height-DNDK
+{
+    height: 40px;
+}
+#slogant
+{
+    padding-top:10px;
+    text-align:center;
+}
+    #slogant a
+    {
+        color:#4390e6;
+        font-size: 50px;
+        font-family:'HMP Jellyka BeesAntique Hand';
+    }
+.DNDK
+{
+  height: 20px;
+  float:right;  
+}
+    .DNDK ul
+    {
+    }
+        .DNDK ul li
+        {
+            float:left;
+            list-style: none;
+            padding-right: 10px;
+        }
+            .DNDK ul li a
+            {
+                text-decoration:none;
+            }
+        .DNDK a:hover
+        {
+           border-bottom: solid 3px #4390e6;
+        }
+.thanhMenu{
+    height:40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top:10px;
+    background:#ffffff;
+}
+.thanhMenu nav a
+{
+    text-decoration:none;
+     display:inline-block;
+    padding:5px;
+
+}
+    .thanhMenu nav a:hover
+    {
+        border-bottom:solid 3px #4390e6;
+    }
+.StyleYNTD
+{
+    font-weight:bold;
+    font-size:25px;
+    color:#ff0000;
+    font-family:'FS North Land Sans';
+}
+.StyleYNND
+{
+    font-size:18px;
+    font-family:'Times New Roman';
+}
+.SlideAndSearch {
+    margin-top:10px;
+    height: 400px;
+}
+
+.slide-show {
+		width: 900px;
+		margin: 0 auto;
+		height: 400px;
+		overflow: hidden;
+
+
+}
+
+
+#ShowCombo
+{
+    width: 140px;
+    float: left;
+    clear: both;
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+    padding: 2px 5px;
+}
+.content {
+    margin-top:10px;
+}
+.typeThongTin {
+    font-size:20px;
+    color:#ff0000;
+    font-weight:bold;
+
+}
+.footer {
+    height: 150px;
+    padding-left: 20px;
+    margin-top:10px;
+
+}
+.MenuTrang li
+{
+ display:inline;
+ margin-left: 10px;
+}
+.MenuTrang li:hover
+{
+    background-color:#ffffff;
+    text-decoration:none;
+}
+/*----------ADMIN-------------*/

@@ -1,0 +1,77 @@
+﻿@using QuanLyBanHoa.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<QuanLyBanHoa.Models.Hoa>
+@helper Truncate(string input, int length)
+{
+    if(input.Length<length)
+    {
+            @input
+    }
+    else
+    {
+            @input.Substring(0, length)<text>...</text>
+    }
+}
+@{
+    ViewBag.Title = "QLH";
+    Layout = "~/Views/Shared/Layout_Admin.cshtml";
+}
+<br />
+
+<h2 style="text-align:center">QUẢN LÝ THÔNG TIN HOA</h2>
+<table class="table" border="1">
+    <tr>
+        <th style="width:300px">
+            Tên hoa
+        </th>
+        <th style="width:100px">
+            Giá bán
+        </th>
+        <th style="width:300px">
+            Mô tả
+        </th>
+        <th style="width:120px">
+            Hình ảnh
+        </th>
+         <th style="width:120px">
+            Loại
+        </th>
+
+        <th style="width:400px"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHoa)
+        </td>
+        <td>
+            @String.Format("{0:0,0}", item.Giaban) VNÐ
+        </td>
+        <td>
+            @Truncate(item.Mota, 100)
+        </td>
+        <td>
+            <img src="@Url.Content("~/Images/"+item.HinhAnh)" width="270"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiHoa.TenLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaHoa", new { id=item.MaHoa }) |
+           @Html.ActionLink("Xóa", "XoaHoa", new { id=item.MaHoa })
+        </td>
+    </tr>
+}
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("QLH", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+        margin-left:10px;
+    }
+</style>

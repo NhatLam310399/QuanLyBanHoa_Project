@@ -1,0 +1,17 @@
+﻿@model IEnumerable<QuanLyBanHoa.Models.LoaiHoa>
+@{
+    ViewBag.Title = "Ynghia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="padding-left: 20px">
+    @foreach(var item in Model)
+    {
+    <div>
+        <a style="color:#ff0000; font-size:30px;font-weight:bold"> @item.TenLoai</a>
+    </div>
+    <div>
+        <a style="font-size:20px">-@item.YNghia</a>
+    </div>
+    }
+</div>

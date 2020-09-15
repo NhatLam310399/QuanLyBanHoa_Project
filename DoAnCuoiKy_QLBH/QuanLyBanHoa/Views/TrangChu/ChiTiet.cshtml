@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model QuanLyBanHoa.Models.Hoa
+<h2 style="color:#0094ff;padding-bottom:4px; text-align:center;background:#ffffff"> <b>Chi tiết sản phẩm</b></h2>
+
+
+<div class="container">
+    <div class="row" style="font-size:x-large">
+        <div class="col-sm-4">
+            <a><img alt="@Model.TenHoa" src="~/Images/@Model.HinhAnh" width="350" height="400" /></a>
+        </div>
+        <div class="col-sm-8" style="padding-left: 5%">
+            <table border="0">
+               
+            <div style="color:red;font-size:30px"><b>@Model.TenHoa </b> </div>
+            <tr>
+                <th style="width:100px;padding-bottom:5%"> Mô tả: </th>
+                <td   style="width:40px"></td>
+                <td>@Model.Mota </td>
+            </tr>
+            <tr><td></td></tr>
+                <br />
+            <tr>
+                <th style="width:100px; text-align:center">Giá bán: </th>
+                <td style="width:40px"></td>
+                <td><a>@Model.Giaban VNĐ</a></td>
+
+            </tr>
+                
+                
+           </table>
+            <br />
+            <div>
+                <button type="submit" style="background:#4cff00">
+                    <a href="@Url.Action("ThemGioHang", "Giohang", new { @sMaHoa = Model.MaHoa, @strURL = Request.Url.ToString() })" style="text-decoration:none;">
+                        ĐẶT MUA
+                    </a>
+                    </button>
+            </div>
+            <div>
+               @Html.ActionLink("Quay lại","TrangChu","TrangChu")
+            </div>
+
+        </div>
+    </div>
+</div>

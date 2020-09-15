@@ -1,0 +1,159 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/themes/CSS/StyleCSS.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body style="background-image:url('/Images/br.png')">
+    <div class="container-fluid">
+
+        
+        <div class="container">
+            <div class="header" style="background-color:#ffffff" >
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="~/Images/logoShop.jpg" width="100px" height="100px" />
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="slogant">
+                            <a> Hãy để chúng tôi giúp bạn thể hiện tình cảm</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                         <div class="DNDK">
+                            <ul>
+                                
+                                <li><a>@Html.ActionLink("Đăng nhập","DangNhap","KhachHang") </a></li>
+                              
+                                <li> <a>@Html.ActionLink("Đăng xuất","DangXuat","KhachHang")</a></li> 
+
+                                <li> <a>@Html.ActionLink("Đăng ký","DangKy","KhachHang")</a></li>  
+                                <li> <a>@Html.ActionLink("Admin","LoginAD","Admin")</a></li>                      
+                            </ul>
+                        </div>      
+                        <div style="padding-top:30px; padding-left: 200px;">
+                          <i class="fas fa-cart-plus">
+                            
+                                  @Html.Action("GiohangPartial","Giohang")
+                              
+                           </i>
+
+                        </div>
+                    </div>
+                    
+              </div>
+            </div>
+                    
+                     
+            <div class="thanhMenu">
+                   <nav>
+                      <a> @Html.ActionLink("Trang chủ", "TrangChu", "TrangChu") </a>
+                        <a >@Html.ActionLink("Hoa khai trương", "KhaiTruong", "TrangChu") </a>
+                        <a >@Html.ActionLink("Hoa tình yêu", "TinhYeu", "TrangChu") </a>
+                        <a >@Html.ActionLink("Hoa cưới", "DamCuoi", "TrangChu") </a>
+                       <a >@Html.ActionLink("Hoa sinh nhật", "SinhNhat", "TrangChu") </a>
+                        <a >@Html.ActionLink("Hoa tốt nghiệp", "TotNghiep", "TrangChu") </a>
+                        <a >@Html.ActionLink("Hoa khác", "LoaiKhac", "TrangChu") </a>
+                        <a >@Html.ActionLink("Ý nghĩa hoa", "Ynghia", "TrangChu") </a>
+                        <a >@Html.ActionLink("Blogs", "Blogs", "TrangChu") </a>
+                       <a> @Html.ActionLink("Hoa Lan","HoaLan","TrangChu")</a>
+
+                   </nav>
+            </div>
+            
+            <div class="SlideAndSearch">
+                <div class="row">
+                    <div class="col-lg-9">
+                            <div class="slide-show">
+                               
+                                <img src="~/Images/Slide/slide1.jpg"  width="820" height="400"/>
+                                <img src="~/Images/Slide/slide2.jpg"  width="820" height="400"/>
+                                <img src="~/Images/Slide/slide3.jpg" width="820" height="400" />
+                                <img src="~/Images/Slide/slide4.jpg"  width="820" height="400"/>
+                                <img src="~/Images/Slide/slide5.jpg"  width="820" height="400"/>
+                                <img src="~/Images/Slide/slide6.jpg"  width="820" height="400"/>
+                            </div>  
+                        <script type="text/javascript">
+                            $(function() {
+	                            $('.slide-show img:gt(0)').hide();
+	                            setInterval(function(){
+                                  $('.slide-show :first-child').fadeOut() 
+                                  .next('img').fadeIn() 
+                                  .end().appendTo('.slide-show'); 
+  	                            }, 2000);
+                            })
+
+                       </script>
+                      </div>
+                      <div class="search">
+                          <a style="font-size:20px; color:#0026ff; font-weight:bold"> Tìm kiếm loại hoa yêu thích</a>
+                          <br />
+                          <br />
+                        @using (Html.BeginForm("Search","TrangChu"))
+                        {
+                            <input type="text" name="searchFull" placeholder="Tìm sản phẩm" id="SearchFull" />
+                            <input type="submit" id="tim" value="Tìm kiếm" />
+                        
+                        }                                                      
+                             
+                                
+                      
+                </div>
+            </div>
+
+
+            <div class="content">
+                @RenderBody()
+            </div>
+
+
+
+            <div class="footer" style="background-color:#ffffff">
+                <div class="row">
+                    <div class="col-lg-4">
+                            <div style="text-align:left">
+                                <a class="typeThongTin" style="color:#ff0000"> Shop hoa LT  </a><br />
+                                <a>Địa chỉ: <b>140 Lê Trọng Tấn, phường Tây Thạnh, quận Tân phú, TP HCM</b></a><br />
+                                <a>Điện thoại: <b>0703456400 hoặc 0703535746 </b></a><br />
+                                <a>Khách nước ngoài liên hệ (zalo):<b> 0703456400</b> </a><br />
+                                <a>Email: <b>shophoalt@gmail.com</b></a><br />
+                            </div>
+                      </div>
+                      <div class="col-lg-2"> 
+                          <div style="text-align:left">
+                            <a class="typeThongTin" style="color:#ff0000">Thông tin</a><br />
+                             <a href="#">Giới thiệu</a><br />
+                             <a href="#">Chính sách bảo mật</a><br />
+                             <a href="#">Điều kiện & điều khoản mua hàng</a><br />
+                             <a href="#">Liên hệ</a><br />
+                            </div>
+                        </div>
+                    <div class="col-lg-4">
+                        <div style="text-align:left">
+                            <a class="typeThongTin" style="color:#ff0000">Liên hệ với chúng tôi</a><br />
+                             <a href="https://www.facebook.com/nhatlam3103"><img src="~/Images/icons8-facebook-64.png" width="25px" height="25px" /></a><br /> <br />
+                             <a><img src="~/Images/icons8-zalo-50.png" width="25px" height="25px"/> 0703456400  </a><br />
+                            </div>
+                        
+                    </div>
+                      <div class="col-lg-2">
+                            <img src="~/Images/logoShop.jpg" width="160px" height="150px" />
+                      </div>
+              </div>
+            </div>
+        </div> @*đóng container *@
+    </div> @*đóng container fluid*@
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
