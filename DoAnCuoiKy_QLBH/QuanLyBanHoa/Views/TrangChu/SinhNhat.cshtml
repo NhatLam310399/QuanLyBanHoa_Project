@@ -4,7 +4,7 @@
     ViewBag.Title = "SinhNhat";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2 style="color:#0094ff;padding-bottom:4px; text-align:center;background:#ffffff"><b> Các loại hoa dành cho sinh nhật</b> </h2>
+<h2 style="color:#0094ff;padding-bottom:4px; text-align:center;background:#ffffff"><b>HOA SINH NHẬT</b> </h2>
 <div class="row">
  @foreach (var h in Model)
  {
@@ -12,14 +12,14 @@
         <div class="thumbnail">
             <br />
           <a href="@Url.Action("ChiTiet","TrangChu",new{id =h.MaHoa})">
-            <img alt="@h.TenHoa" src="~/Images/@h.HinhAnh" height="400" width="350"/></a>
+            <img alt="@h.TenHoa" src="~/Images/@h.HinhAnh" height="400" width="350" style="border-radius: 15px"/></a>
           <div>
             <h5>@h.TenHoa </h5>
             <a style="font-size:18px;font-weight:bold;color:#0094ff">@h.Giaban VNĐ</a><br />
           </div>
             <div>
-                <button type="submit" style="background:#0094ff"><a href="@Url.Action("ChiTiet","TrangChu",new{ id= h.MaHoa})" style="color:#ffffff">Chi tiết</a> </button>
-                <button type="submit" style="background:#0094ff"><a href="@Url.Action("ThemGioHang", "Giohang", new { @sMaHoa=h.MaHoa, @strURL = Request.Url.ToString() })" style="color:#ffffff">Đặt hàng </a></button>
+                <button type="submit" class="Chitiet" ><a href="@Url.Action("ChiTiet","TrangChu",new{ id= h.MaHoa})" >Chi tiết</a> </button>
+                <button type="submit" class="ThemGH" ><a href="@Url.Action("ThemGioHang", "Giohang", new { @sMaHoa=h.MaHoa, @strURL = Request.Url.ToString() })" >Đặt hàng </a></button>
             </div>
       </div>
     </div>

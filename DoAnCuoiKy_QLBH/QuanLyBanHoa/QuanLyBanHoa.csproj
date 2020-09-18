@@ -350,7 +350,6 @@
       <LastGenOutput>DataConnect.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Images\1.psd" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -403,7 +402,6 @@
     <Content Include="Views\Admin\LoginAD.cshtml" />
     <Content Include="Views\Admin\QLH.cshtml" />
     <Content Include="Views\Admin\XoaHoa.cshtml" />
-    <Content Include="Views\TrangChu\HoaLan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

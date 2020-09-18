@@ -85,10 +85,6 @@ namespace QuanLyBanHoa.Controllers
         {
             return View();
         }
-        public ActionResult HoaLan()
-        {
-            return View();
-        }
         public ActionResult GioiThieu()
         {
             return View();
@@ -107,7 +103,7 @@ namespace QuanLyBanHoa.Controllers
             var hoa = from s in data.Hoas select s;
             if (!String.IsNullOrEmpty(searchFull))
             {
-                ViewBag.Ten = " << " + searchFull + " >>";
+                ViewBag.Ten =searchFull;
                 hoa = hoa.Where(t => t.TenHoa.Contains(searchFull));
                 return View(hoa.ToPagedList(pageN, pageS));
             }

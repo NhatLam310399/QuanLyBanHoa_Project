@@ -91,6 +91,6 @@ E:\DoAnCNWeb\DoAnCuoiKy_QLBH\QuanLyBanHoa\bin\System.Web.Razor.xml
 E:\DoAnCNWeb\DoAnCuoiKy_QLBH\QuanLyBanHoa\bin\System.Web.WebPages.xml
 E:\DoAnCNWeb\DoAnCuoiKy_QLBH\QuanLyBanHoa\bin\System.Web.WebPages.Deployment.xml
 E:\DoAnCNWeb\DoAnCuoiKy_QLBH\QuanLyBanHoa\bin\System.Web.WebPages.Razor.xml
-E:\DoAnCNWeb\DoAnCuoiKy_QLBH\QuanLyBanHoa\obj\Debug\QuanLyBanHoa.csprojResolveAssemblyReference.cache
 E:\DoAnCNWeb\DoAnCuoiKy_QLBH\QuanLyBanHoa\obj\Debug\QuanLyBanHoa.dll
 E:\DoAnCNWeb\DoAnCuoiKy_QLBH\QuanLyBanHoa\obj\Debug\QuanLyBanHoa.pdb
+E:\DoAnCNWeb\DoAnCuoiKy_QLBH\QuanLyBanHoa\obj\Debug\QuanLyBanHoa.csprojResolveAssemblyReference.cache

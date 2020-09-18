@@ -1,7 +1,8 @@
-﻿
-.header
+﻿*, *::after, *:before
 {
-    margin-top: 20px;
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
 }
 
 .height-DNDK
@@ -12,12 +13,15 @@
 {
     padding-top:10px;
     text-align:center;
+    position:relative;
 }
-    #slogant a
+    #slogant marquee
     {
-        color:#4390e6;
+        position:absolute;
+        left: 0;
+        color: #4390e6;
         font-size: 50px;
-        font-family:'HMP Jellyka BeesAntique Hand';
+        font-family: 'HMP Jellyka BeesAntique Hand';
     }
 .DNDK
 {
@@ -36,11 +40,24 @@
             .DNDK ul li a
             {
                 text-decoration:none;
+                position:relative;
+                color:#4390e6;
+                font-weight:600;
+                display:block;
+                font-size: 16px;
             }
-        .DNDK a:hover
-        {
-           border-bottom: solid 3px #4390e6;
-        }
+
+    .DNDK a:hover::before
+    {
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 3px;
+        bottom: -3px;
+        left: 0;
+        background: #4390e6;
+        animation: line 1s;
+    }
 .thanhMenu{
     height:40px;
     text-align: center;
@@ -51,15 +68,53 @@
 }
 .thanhMenu nav a
 {
-    text-decoration:none;
-     display:inline-block;
-    padding:5px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+    color:#4390e6;
+    position:relative;
 
 }
-    .thanhMenu nav a:hover
-    {
-        border-bottom:solid 3px #4390e6;
+     .thanhMenu nav a:hover::before{
+         content:"";
+         width: 100%;
+         position:absolute;
+         height: 3px;
+         bottom: 0;
+         left:0;
+         background: #4390e6;
+         animation: line 1s;
     }
+     .thanhMenu nav a:hover::after{
+         content:"";
+         width: 100%;
+         position:absolute;
+         height: 3px;
+         bottom: 25px;
+         right:0;
+         background: #4390e6;
+         animation: line 1s;
+    }
+
+
+.giohang-count
+{
+    text-decoration:none;   
+    color:#4390e6;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+@keyframes line
+{
+      0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
 .StyleYNTD
 {
     font-weight:bold;
@@ -86,7 +141,27 @@
 
 }
 
-
+.btn-search
+{
+    box-shadow: none;
+    height: 25px;
+    width: 80px;
+}
+    .btn-search span
+    {
+        border: 1px solid #4390e6;
+        color:#4390e6;
+        background:#ffffff;
+        display:block;
+    }
+    .btn-search span:hover
+    {
+        background: #4390e6;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        transition: 0.6s;
+    }
+    
 #ShowCombo
 {
     width: 140px;
@@ -119,7 +194,64 @@
 }
 .MenuTrang li:hover
 {
+    transition: 0.6s;
     background-color:#ffffff;
     text-decoration:none;
+}
+
+/*style button*/
+.Chitiet, .ThemGH
+{
+    border:2px solid #4390e6;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    background: white;
+    position:relative;
+
+}
+    .Chitiet a, .ThemGH a
+    {
+        display:block;
+        color:#4390e6;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration:none;
+        z-index: 2;
+    }
+        .Chitiet a:hover, .ThemGH a:hover
+        {
+            text-decoration:none;
+        }
+        .Chitiet a:hover::after, .ThemGH a:hover::after
+        {
+            content:"";
+            background:#4390e6;
+            opacity: 0.2;
+            height:100%;
+            width:100%;
+            position:absolute;
+            top: 0;
+            left:0;
+            animation: moveBg 0.3s;
+            
+        }
+@keyframes moveBg
+{
+    0%
+    {
+        width: 0%;
+    }
+    100%
+    {
+        width: 100%;
+    }
+}
+
+/*border item*/
+.border-item
+{
+    padding-left: 10px;
+    border-radius: 10px;
 }
 /*----------ADMIN-------------*/

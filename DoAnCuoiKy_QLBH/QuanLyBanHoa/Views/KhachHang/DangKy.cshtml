@@ -2,7 +2,7 @@
     ViewBag.Title = "DangKy";
     Layout = "~/Views/Shared/_Layout.cshtml";
     <!--td là cot, th là tiêu đề, tr là dòng -->
-<div style="padding-top:100px;padding-left:400px;height:600px;background-image:url(http://hinhnenpowerpointdep.com/uploads/images/20-hinh-anh-cuc-chat-cuc-la-ve-hoa-hoc-1494512053-4.jpg)">
+<div style="padding-top:100px;padding-left:400px;height:600px;background-image:url('/Images/bgAD.jpg')">
     <table border="0">
     <h1 style="color:#ff0000">Đăng ký thành viên</h1>
     @using (Html.BeginForm())
@@ -10,23 +10,23 @@
         @Html.ValidationSummary(true)
         <tr class="height-DNDK">
             <td>Họ tên khách hàng </td>
-            <td>@Html.TextBox("Tenkh") @ViewData["Loi1"]</td>
+            <td>@Html.TextBox("Tenkh") @ViewData["Loi1"]  </td>
         </tr>
         <tr class="height-DNDK">
             <td>Tên đăng nhập</td>
-            <td>@Html.TextBox("Tk") @ViewData["Loi2"]</td>
+            <td>@Html.TextBox("Tk") @ViewData["Loi2"] @ViewData["Loi2.1"] </td>
         </tr>
         <tr class="height-DNDK">
             <td>Mật khẩu: </td>
-            <td>@Html.Password("Mk") @ViewData["Loi3"]</td>
+            <td>@Html.Password("Mk") @ViewData["Loi3"] @ViewData["Loi3.1"]</td>
         </tr>
         <tr class="height-DNDK">
             <td>Email</td>
-            <td> @Html.TextBox("mail") @ViewData["Loi5"]</td>
+            <td> @Html.TextBox("mail") @ViewData["Loi5"] @ViewData["Loi5.1"]</td>
         </tr>
         <tr class="height-DNDK">
             <td>Điện thoại:</td>
-            <td>@Html.TextBox("Dt") @ViewData["Loi6"]</td>
+            <td>@Html.TextBox("Dt") @ViewData["Loi6"] @ViewData["Loi6.1"]  </td>
         </tr>
         <tr class="height-DNDK">
             <td>Địa chỉ:</td>
@@ -34,7 +34,7 @@
         </tr>
         <tr class="height-DNDK">
             <td>Ngày sinh:</td>
-            <td> <input type="date" name="NSinh" /></td>
+            <td> <input type="date" name="NSinh" />@ViewData["Loi8"]  </td>
         </tr>
         <tr class="height-DNDK">
            <td></td>
