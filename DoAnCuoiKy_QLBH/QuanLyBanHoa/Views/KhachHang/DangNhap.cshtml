@@ -1,47 +1,47 @@
 ﻿@{
-    ViewBag.Title = "DangNhap";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
     }
-
-<!--td là cot, th là tiêu đề, tr là dòng -->
-<div style="padding-top:100px;padding-left:400px; height:400px;background-image:url('/Images/bgAD.jpg')">
-    <table border="0">
-    <tr>
-        <th></th>
-        <th> <h1 style="color:#ff0000">Đăng nhập</h1></th>
-        <th></th>
-    </tr>
-        @using (Html.BeginForm())
-        {
-            <tr class="height-DNDK">
-                <th>
-                   Tài khoản:
-                </th>
-                <td>
-                   @Html.TextBox("TaiKhoan") @ViewData["Loi1"]
-                </td>
-                <td></td>
-            </tr>
-            <tr class="height-DNDK">
-                <th>
-                    Mật khẩu
-                </th>
-                <td>
-                    @Html.Password("MatKhau") @ViewData["Loi2"]
-                </td>
-                <td></td>
-            </tr>
-            <tr class="height-DNDK">
-                <td></td>
-                <td>
-                    <input type="submit" value="Đăng nhập" />
-                    <a href="@Url.Action("DangKy","KhachHang")">Bạn chưa có tài khoản?</a>
-                    
-                </td>
-            </tr>
-            
-        }
-        <h3 style="text-align:center">@ViewBag.ThongBao</h3>
-
-</table>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng nhập</title>
+    <link href="~/Content/themes/CSS/Login_Logout.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <div class="login-title"><h3>Đăng nhập</h3></div>
+            <div  class="login-form">
+                    @using (Html.BeginForm())
+                     {
+                         <form>
+                            <div class="login-tk">
+                                <span>Tài khoản </span>
+                                <input type="text" placeholder="Tên tài khoản" name="TaiKhoan" />
+                               <p> @ViewData["Loi1"]</p>
+                            </div>
+                            <div class="login-mk">
+                                <span>Mật khẩu</span>
+                                <input type="password" placeholder="Mật khẩu" name="MatKhau" />
+                              <p> @ViewData["Loi2"]</p>
+                            </div>
+                            <div class="login-submit">
+                               
+                                <button type="submit">Đăng nhập</button><br />
+                                 <a>@Html.ActionLink("Bạn chưa có tài khoản?","DangKy","KhachHang")</a>
+                                
+                            </div>
+                        </form>
+                 }
+             </div>
+   
+            <div class="login-notify"> <h3 style="text-align:center">@ViewBag.ThongBao</h3></div>
+       
+        </div>
+        </div>
+</body>
+</html>

@@ -1,47 +1,75 @@
 ﻿@{
-    ViewBag.Title = "DangKy";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    <!--td là cot, th là tiêu đề, tr là dòng -->
-<div style="padding-top:100px;padding-left:400px;height:600px;background-image:url('/Images/bgAD.jpg')">
-    <table border="0">
-    <h1 style="color:#ff0000">Đăng ký thành viên</h1>
-    @using (Html.BeginForm())
-    { 
-        @Html.ValidationSummary(true)
-        <tr class="height-DNDK">
-            <td>Họ tên khách hàng </td>
-            <td>@Html.TextBox("Tenkh") @ViewData["Loi1"]  </td>
-        </tr>
-        <tr class="height-DNDK">
-            <td>Tên đăng nhập</td>
-            <td>@Html.TextBox("Tk") @ViewData["Loi2"] @ViewData["Loi2.1"] </td>
-        </tr>
-        <tr class="height-DNDK">
-            <td>Mật khẩu: </td>
-            <td>@Html.Password("Mk") @ViewData["Loi3"] @ViewData["Loi3.1"]</td>
-        </tr>
-        <tr class="height-DNDK">
-            <td>Email</td>
-            <td> @Html.TextBox("mail") @ViewData["Loi5"] @ViewData["Loi5.1"]</td>
-        </tr>
-        <tr class="height-DNDK">
-            <td>Điện thoại:</td>
-            <td>@Html.TextBox("Dt") @ViewData["Loi6"] @ViewData["Loi6.1"]  </td>
-        </tr>
-        <tr class="height-DNDK">
-            <td>Địa chỉ:</td>
-            <td>@Html.TextBox("Dchi") @ViewData["Loi7"]</td>
-        </tr>
-        <tr class="height-DNDK">
-            <td>Ngày sinh:</td>
-            <td> <input type="date" name="NSinh" />@ViewData["Loi8"]  </td>
-        </tr>
-        <tr class="height-DNDK">
-           <td></td>
-            <td><input type="submit" value="Đăng ký"/></td>
-        </tr>
-    }
-   </table> 
-    </div>
+    Layout = null;
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng ký</title>
+    <link href="~/Content/themes/CSS/Login_Logout.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+        <div class="container">
+            <div class="logup">
+                <div class="logup-title">
+                    <h3>Đăng ký thông tin</h3>
+                </div>
+                <div class="logup-form">
+                    @using (Html.BeginForm())
+                    { 
+                        <form>
+                            <div>
+                                <span>Họ và tên</span>
+                                <input type="text" name="Tenkh" />
+                                <p>@ViewData["Loi1"]</p>
+                            </div>
+
+                            <div>
+                                <span>Tên đăng nhập</span>
+                                <input type="text" name="Tk" />
+                              <p> @ViewData["Loi2"] @ViewData["Loi2.1"]</p>
+                            </div>
+
+                            <div>
+                                <span>Mật khẩu</span>
+                                <input type="text" name="Mk" />
+                               <p> @ViewData["Loi3"] @ViewData["Loi3.1"]</p>
+                            </div>
+
+                            <div>
+                                <span>Email</span>
+                                <input type="text" name="mail" />
+                              <p>  @ViewData["Loi5"] @ViewData["Loi5.1"]</p>
+                            </div>
+
+                            <div>
+                                <span>Số điện thoại</span>
+                                <input type="text" name="Dt" />
+                              <p> @ViewData["Loi6"] @ViewData["Loi6.2"]</p>
+                            </div>
+
+                            <div>
+                                <span>Địa chỉ</span>
+                                <input type="text" name="Dchi" />
+                              <p> @ViewData["Loi7"]</p>
+                            </div>
+
+                            <div>
+                                <span>Ngày sinh</span>
+                                <input type="text" name="Nsinh" />
+                              <p>  @ViewData["Loi8"]</p>
+                            </div>
+                            <div>
+                                <button type="submit">Đăng ký</button>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+</body>
+</html>
 

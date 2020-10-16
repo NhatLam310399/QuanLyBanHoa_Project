@@ -152,6 +152,7 @@
     <Content Include="Content\fonts\font-awesome.min.css" />
     <Content Include="Content\fonts\material-design-iconic-font.min.css" />
     <Content Include="Content\jquery-3.4.1.min.js" />
+    <Content Include="Content\themes\CSS\Login_Logout.css" />
     <Content Include="Content\themes\CSS\StyleCSS.css" />
     <Content Include="Content\vendor\main.js" />
     <Content Include="Content\PagedList.css" />

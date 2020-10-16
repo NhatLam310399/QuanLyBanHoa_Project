@@ -4,7 +4,15 @@
     padding: 0;
     box-sizing:border-box;
 }
+h2
+{
+    width: 100%;
+     color:#4390e6;
+     padding: 5px;
+     text-align:center;
+     background:#ffffff;
 
+}
 .height-DNDK
 {
     height: 40px;
@@ -175,6 +183,18 @@
 .content {
     margin-top:10px;
 }
+.title_page
+{
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    font-size: 30px;
+    color:#4390e6;
+    padding: 5px;
+    font-weight: 300;
+
+}
+
 .typeThongTin {
     font-size:20px;
     color:#ff0000;
@@ -182,21 +202,55 @@
 
 }
 .footer {
-    height: 150px;
-    padding-left: 20px;
-    margin-top:10px;
+    height: auto;
+    width: 100%;
+    padding: 20px;
 
+}
+.footer__style
+{
+    left: 0;
+}
+    .footer__style .ft__title
+    {
+        color: #4390e6;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .footer__style a
+    {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+    }
+.PhanTrang
+{
+    margin-top: 20px;
+    font-size: 16px;
 }
 .MenuTrang li
 {
- display:inline;
- margin-left: 10px;
+  
+     display:inline;
+     margin: 5px;
+     width: 27px;
+     height: 27px;
 }
-.MenuTrang li:hover
+    .MenuTrang li a
+    {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    display:block;
+    text-align: center;
+    background: white;
+    }
+.MenuTrang li a:hover
 {
-    transition: 0.6s;
-    background-color:#ffffff;
-    text-decoration:none;
+    text-decoration: none;
+    transition: 1.5s;
+    background-color:#4390e6;
+    
 }
 
 /*style button*/
@@ -206,15 +260,15 @@
     border-radius: 5px;
     width: 100px;
     height: 30px;
-    background: white;
     position:relative;
-
+    background-color:transparent;
 }
     .Chitiet a, .ThemGH a
     {
+        margin-top: -2px;
         display:block;
         color:#4390e6;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 600;
         text-decoration:none;
         z-index: 2;
@@ -254,4 +308,3 @@
     padding-left: 10px;
     border-radius: 10px;
 }
-/*----------ADMIN-------------*/
